@@ -18,7 +18,7 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const client = createClient();
+  const client = await createClient();
   const page = await client
     .getByUID("page", params.uid)
     .catch(() => notFound());
@@ -38,7 +38,7 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Params }) {
-  const client = createClient();
+  const client = await createClient();
   const page = await client
     .getByUID("page", params.uid)
     .catch(() => notFound());
@@ -52,14 +52,14 @@ export async function generateStaticParams() {
   /**
    * Query all Documents from the API, except the homepage.
    */
-  const pages = await client.getAllByType("page", {
+  const pages = await (await client).getAllByType("page", {
     predicates: [prismic.filter.not("my.page.uid", "home")],
   });
 
   /**
    * Define a path for every Document.
    */
-  return pages.map((page) => {
+  return pages.map((page: prismic.PrismicDocument) => {
     return { uid: page.uid };
   });
 }
