@@ -2,8 +2,8 @@
 
 Nafian Solutions is a data and AI consultancy offering comprehensive services in web development, analytics, AI, data science, and business strategy. This repository contains the codebase for our website, designed to present our core services, projects, and expertise in delivering intelligent solutions to clients. Built with [Prismic](https://prismic.io/) as a headless CMS and [Next.js](https://nextjs.org/) for a modern, responsive frontend, it also provides a robust foundation for scalability, customization, and performance.
 
-- **Demo**: [View the live demo][live-demo] (not yet available)
-- **Documentation**: [Prismic Next.js Documentation][prismic-docs] (not yet available)
+- **Live Demo**: [View the live demo](https://nextjs-starter-prismic-minimal.vercel.app/) (not yet available)
+- **Documentation**: [Prismic Next.js Documentation](https://prismic.io/docs/technologies/nextjs)
 
 ![Nafian Solutions Website Screenshot](https://user-images.githubusercontent.com/31219208/228821412-fdde92b2-c13c-4287-b799-611fa96a5fd6.png)
 
@@ -102,9 +102,9 @@ For comprehensive documentation, visit [Prismic's guide for Next.js][prismic-doc
 
 Licensed under the Apache License, Version 2.0. See the LICENSE file for details.
 
-
 [prismic]: https://prismic.io/
 [prismic-docs]: https://prismic.io/docs/technologies/nextjs
 [prismic-sign-up]: https://prismic.io/dashboard/signup
 [nextjs]: https://nextjs.org/
 [live-demo]: https://nextjs-starter-prismic-minimal.vercel.app/
+
