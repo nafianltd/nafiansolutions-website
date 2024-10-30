@@ -102,6 +102,7 @@ For comprehensive documentation, visit [Prismic's guide for Next.js][prismic-doc
 
 Licensed under the Apache License, Version 2.0. See the LICENSE file for details.
 
+
 [prismic]: https://prismic.io/
 [prismic-docs]: https://prismic.io/docs/technologies/nextjs
 [prismic-sign-up]: https://prismic.io/dashboard/signup
