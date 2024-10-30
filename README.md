@@ -29,7 +29,7 @@ cd your-project-name
 # Initialize Prismic
 npx @slicemachine/init@latest
 
-
+```
 
 These commands will:
 
@@ -39,8 +39,9 @@ These commands will:
 
 To start the development server, run:
 
-sh
+```sh
 npm run dev
+```
 
 
 ### 🖊️ Content Management
@@ -101,10 +102,3 @@ For comprehensive documentation, visit [Prismic's guide for Next.js][prismic-doc
 ## License
 
 Licensed under the Apache License, Version 2.0. See the LICENSE file for details.
-
-[prismic]: https://prismic.io/
-[prismic-docs]: https://prismic.io/docs/technologies/nextjs
-[prismic-sign-up]: https://prismic.io/dashboard/signup
-[nextjs]: https://nextjs.org/
-[live-demo]: https://nextjs-starter-prismic-minimal.vercel.app/
-
