@@ -23,7 +23,9 @@ export default function NavBar({ settings }: NavBarProps) {
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
         <div className="flex items-center justify-between">
           <Link href="/" className="z-50 -mt-2" onClick={() => setOpen(false)}>
-            <WordMark />
+            <div className="w-[60%] xs:w-[60%] sm:w-[70%] md:w-[80%] lg:w-[100%] min-w-[100px] max-w-[200px] transition-all duration-300">
+              <WordMark />
+            </div>
             <span className="sr-only">NafianSolutions Home Page</span>
           </Link>
           <button
