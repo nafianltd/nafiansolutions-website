@@ -149,7 +149,8 @@ export default function AnimatedContent({
         ))}
       </div>
       
-      <div className="mt-8 max-w-md text-balance text-center text-slate-300">
+      <p className="text-sm text-slate-400/60 italic mt-8">and so much more...</p>
+      <div className="mt-4 max-w-md text-balance text-center text-slate-300">
         <PrismicRichText field={slice.primary.figure_caption} />
       </div>
     </div>

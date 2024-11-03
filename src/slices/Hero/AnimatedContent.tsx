@@ -127,11 +127,15 @@ export default function AnimatedContent({ slice }: { slice: Content.HerooSlice }
             </div>
             )}
             {isFilled.link(slice.primary.button_link) && (
-            <ButtonLink className="hero__button mt-8 opacity-0" field={slice.primary.button_link}>
-                <span className="flex items-center gap-1">
-                    <HiChevronDoubleRight className="text-xl" />
+            <ButtonLink 
+                className="hero__button mt-8 opacity-0 relative inline-flex items-center px-6 py-3 overflow-hidden rounded-full bg-blue-600/80 hover:bg-blue-500/90 transition-colors duration-300 shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] group" 
+                field={slice.primary.button_link}
+            >
+                <span className="flex items-center gap-2 relative z-10 text-white font-medium">
+                    <HiChevronDoubleRight className="text-xl transition-transform duration-300 group-hover:translate-x-1" />
                     {slice.primary.button_label}
                 </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/90 to-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </ButtonLink>
             )}
 
