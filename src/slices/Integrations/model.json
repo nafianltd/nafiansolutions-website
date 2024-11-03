@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2"
+            "multi": "heading2"
           }
         },
         "body": {
@@ -52,6 +52,15 @@
                 }
               }
             }
+          }
+        },
+        "figure_caption": {
+          "type": "StructuredText",
+          "config": {
+            "label": "figure caption",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em"
           }
         }
       },

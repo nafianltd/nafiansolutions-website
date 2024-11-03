@@ -9,6 +9,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 import { useRef } from "react";
+import { HiChevronDoubleRight } from "react-icons/hi";
+import OptimizedImage from "@/components/OptimizedImage";
 
 
 export type AnimatedContentProps = SliceComponentProps;
@@ -125,18 +127,23 @@ export default function AnimatedContent({ slice }: { slice: Content.HerooSlice }
             </div>
             )}
             {isFilled.link(slice.primary.button_link) && (
-            <ButtonLink className="hero__button mt-8" field={slice.primary.button_link}>
-                {slice.primary.button_label}
+            <ButtonLink className="hero__button mt-8 opacity-0" field={slice.primary.button_link}>
+                <span className="flex items-center gap-1">
+                    <HiChevronDoubleRight className="text-xl" />
+                    {slice.primary.button_label}
+                </span>
             </ButtonLink>
             )}
 
             {isFilled.image(slice.primary.image) && (
-            <div className="hero__image glass-container mt-16 w-fit mx-auto max-w-[70%] md:max-w-[60%] opacity-0">
+            <div className="hero__image glass-container mt-20 w-fit mx-auto max-w-[85%] md:max-w-[75%] opacity-0">
                 <div className="hero__glow absolute inset-0 -z-10 bg-blue-500/30 opacity-0 blur-2xl filter" />
-                <PrismicNextImage className="rounded-lg" field={slice.primary.image}
-                priority
-                sizes="100vw"
-                /> 
+                <OptimizedImage 
+                    field={slice.primary.image}
+                    priority={true}
+                    sizes="100vw"
+                    className="rounded-lg px-6 pt-8 pb-6"
+                />
             </div>
             )}
         </div>

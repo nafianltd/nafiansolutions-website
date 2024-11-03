@@ -648,12 +648,12 @@ export interface IntegrationsSliceDefaultPrimary {
   /**
    * Heading field in *Integrations → Default → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: integrations.default.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.TitleField;
+  heading: prismic.RichTextField;
 
   /**
    * Body field in *Integrations → Default → Primary*
@@ -674,6 +674,16 @@ export interface IntegrationsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   icon: prismic.GroupField<Simplify<IntegrationsSliceDefaultPrimaryIconItem>>;
+
+  /**
+   * figure caption field in *Integrations → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.default.primary.figure_caption
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  figure_caption: prismic.RichTextField;
 }
 
 /**

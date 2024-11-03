@@ -9,7 +9,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Carefully"
+							"text": "Steel"
 						}
 					}
 				]
@@ -40,6 +40,17 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"figure_caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip do excepteur mollit enim enim. Magna enim nostrud laborum aute."
+						}
 					}
 				]
 			}

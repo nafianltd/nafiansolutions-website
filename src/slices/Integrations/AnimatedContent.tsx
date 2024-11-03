@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 import StylizedLogoMark from "./StylizedLogoMark";
 import clsx from "clsx";
+import { PrismicRichText } from "@prismicio/react";
 
 import {
   FaDigitalOcean,
@@ -31,6 +32,7 @@ export default function AnimatedContent({
   slice: Content.IntegrationsSlice & {
     primary: {
       icon: { icon: string | null }[];
+      figure_caption: any;
     };
   };
 }) {
@@ -114,36 +116,42 @@ export default function AnimatedContent({
   );
 
   return (
-    <div
-      className="mt-20 flex flex-col items-center justify-center md:flex-row"
-      ref={container}
-    >
-      {slice.primary.icon.map((item, index) => (
-        <React.Fragment key={index}>
-          {index === Math.floor(slice.primary.icon.length / 2) && (
-            <>
-              <div className="w-[35%] h-[35%] md:w-[20%] md:h-[20%] pulsing-logo opacity-70 shrink-0 flex items-center justify-center self-center my-0">
-                <StylizedLogoMark className="w-full h-full" />
-              </div>
-              <div className="signal-line rotate-180 bg-gradient-to-t my-0" />
-            </>
-          )}
-          <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center self-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl text-blue-100 opacity-40 md:text-4xl lg:text-5xl my-0">
-            {item.icon && icons[item.icon]}
-          </div>
-          {index !== slice.primary.icon.length - 1 && (
-            <div
-              className={clsx(
-                "signal-line",
-                index >= Math.floor(slice.primary.icon.length / 2)
-                  ? "rotate-180"
-                  : "rotate-0",
-                "my-0"
-              )}
-            />
-          )}
-        </React.Fragment>
-      ))}
+    <div className="flex flex-col items-center">
+      <div
+        className="mt-20 flex flex-col items-center justify-center md:flex-row"
+        ref={container}
+      >
+        {slice.primary.icon.map((item, index) => (
+          <React.Fragment key={index}>
+            {index === Math.floor(slice.primary.icon.length / 2) && (
+              <>
+                <div className="w-[35%] h-[35%] md:w-[20%] md:h-[20%] pulsing-logo opacity-70 shrink-0 flex items-center justify-center self-center my-0">
+                  <StylizedLogoMark className="w-full h-full" />
+                </div>
+                <div className="signal-line rotate-180 bg-gradient-to-t my-0" />
+              </>
+            )}
+            <div className="pulsing-icon flex aspect-square shrink-0 items-center justify-center self-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl text-blue-100 opacity-40 md:text-4xl lg:text-5xl my-0">
+              {item.icon && icons[item.icon]}
+            </div>
+            {index !== slice.primary.icon.length - 1 && (
+              <div
+                className={clsx(
+                  "signal-line",
+                  index >= Math.floor(slice.primary.icon.length / 2)
+                    ? "rotate-180"
+                    : "rotate-0",
+                  "my-0"
+                )}
+              />
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+      
+      <div className="mt-8 max-w-md text-balance text-center text-slate-300">
+        <PrismicRichText field={slice.primary.figure_caption} />
+      </div>
     </div>
   );
 }
