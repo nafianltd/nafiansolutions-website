@@ -23,9 +23,11 @@ const BentoBox = ({ item, index }: { item: any; index: number }) => {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={clsx(
-        "glass-container row-span-3 grid grid-rows-[auto_1fr_auto] gap-4 rounded-lg bg-gradient-to-b from-gray-900 to-gray-950 p-4",
+        "glass-container row-span-3 grid grid-rows-[auto_1fr_auto] gap-4 rounded-lg bg-gradient-to-b from-gray-900 to-gray-950 p-4 relative group cursor-pointer",
+        "transition-all duration-300 hover:scale-[1.02]",
         item.wide ? "md:col-span-2" : "md:col-span-1",
       )}
+      onClick={() => window.location.href = '/packages'}
     >
       <h3 className="text-2xl">
         <PrismicText field={item.title} />
@@ -44,6 +46,13 @@ const BentoBox = ({ item, index }: { item: any; index: number }) => {
           "(max-width: 768px) 100vw, 33vw"
         }
       />
+      
+      {/* Subtle Tooltip */}
+      <div className="absolute bottom-4 right-4 opacity-0 transition-all duration-300 group-hover:opacity-100">
+        <span className="text-sm text-blue-200/80 bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-200/10 backdrop-blur-sm">
+          Find out more →
+        </span>
+      </div>
     </motion.div>
   );
 };
